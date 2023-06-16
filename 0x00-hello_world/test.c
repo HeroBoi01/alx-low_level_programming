@@ -11,7 +11,3 @@ int main(void)
     printf("Programming is like building a multilingual puzzle,\n");
     return (0);
 }
-
-The other version:
-#!/bin/bash
-gcc -E "$CFILE" -o c
