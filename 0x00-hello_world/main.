@@ -1,0 +1,6 @@
+#include <stdio.h>
+
+int main(void) {
+    printf("Hello alx!\n");
+    return 0;
+}
