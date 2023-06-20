@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void print_alphabet(void);  // Function prototype
+void print_alphabet(void);  /* Function prototype */
 
 int main(void)
 {
@@ -8,7 +8,7 @@ int main(void)
     return 0;
 }
 
-void print_alphabet(void)  // Function definition
+void print_alphabet(void)  /* Function definition */
 {
     char letter;
 
