@@ -1,9 +1,14 @@
 #include <stdio.h>
 
-/**
- * print_alphabet - Prints the alphabet in lowercase.
- */
-void print_alphabet(void)
+void print_alphabet(void);  // Function prototype
+
+int main(void)
+{
+    print_alphabet();
+    return 0;
+}
+
+void print_alphabet(void)  // Function definition
 {
     char letter;
 
@@ -13,10 +18,4 @@ void print_alphabet(void)
     }
 
     putchar('\n');
-}
-
-int main(void)
-{
-    print_alphabet();
-    return 0;
 }
