@@ -4,7 +4,7 @@
 /* Declaration of _putchar function */
 int _putchar(char c);
 
-/* Declaration of _islower function */
-int _islower(int c);
+/* Declaration of _isalpha function */
+int _isalpha(int c);
 
 #endif /* MAIN_H */
