@@ -1,21 +1,18 @@
-#include <stdio.h>
+#include "main.h"
 
-void print_alphabet(void);  /* Function prototype */
+/* Declaration of _putchar function */
+int _putchar(char c);
 
-int main(void)
+/**
+ * print_alphabet - Prints the lowercase alphabet followed by a new line.
+ */
+void print_alphabet(void)
 {
-    print_alphabet();
-    return 0;
-}
+    int i;
 
-void print_alphabet(void)  /* Function definition */
-{
-    char letter;
-
-    for (letter = 'a'; letter <= 'z'; letter++)
+    for (i = 97; i <= 122; i++)
     {
-        putchar(letter);
+        _putchar((char)i);
     }
-
-    putchar('\n');
+    _putchar('\n');
 }
