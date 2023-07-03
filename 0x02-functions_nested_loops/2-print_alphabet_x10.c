@@ -2,7 +2,7 @@
 
 /**
  * print_alphabet_x10 - Prints the lowercase alphabet 10 times.
- *                       Each line consists of the alphabet followed by a new line.
+ *                      Each line consists of the alphabet followed by a new line.
  */
 void print_alphabet_x10(void)
 {
