@@ -1,15 +1,17 @@
 #!/bin/bash
 
 # List all files and directories (including hidden ones) with their file types
-file_list=$(ls -Ap | awk '{if (substr($0,1,1) == ".") print $0; else print $0"/"}')
+file_list=$(ls -Ap)
 
 # Sort the list alphabetically, considering only digits and letters
-sorted_list=$(echo "$file_list" | LC_COLLATE=C sort -df)
+sorted_list=$(printf "%s\n" $file_list | grep -E "^[A-Za-z0-9.]+$" | LC_COLLATE=C sort -df)
 
 # Move the directories "." and ".." to the beginning of the list
-final_list=$(echo -e ".\n..\n$sorted_list" | grep -v "^$" | tr '\n' ',')
+final_list=$(printf "%s\n" $sorted_list | awk '/^\.$/ || /^\.\.$/ { print; next } { print $0"/" }')
 
 # Print the final list with commas separating the entries
-echo "${final_list%,}"
+printf "%s" $final_list | paste -sd ","
+
+echo
 
 exit 0
