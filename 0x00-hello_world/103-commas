@@ -4,14 +4,12 @@
 file_list=$(ls -Ap)
 
 # Sort the list alphabetically, considering only digits and letters
-sorted_list=$(printf "%s\n" $file_list | grep -E "^[A-Za-z0-9.]+$" | LC_COLLATE=C sort -df)
+sorted_list=$(echo "$file_list" | grep -E "^[A-Za-z0-9.]+$" | LC_COLLATE=C sort -df)
 
 # Move the directories "." and ".." to the beginning of the list
-final_list=$(printf "%s\n" $sorted_list | awk '/^\.$/ || /^\.\.$/ { print; next } { print $0"/" }')
+final_list=$(echo -e ".\n..\n$sorted_list")
 
 # Print the final list with commas separating the entries
-printf "%s" $final_list | paste -sd ","
-
-echo
+echo "$final_list" | paste -sd ","
 
 exit 0
