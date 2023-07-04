@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Get a list of all files and directories in the current directory (including hidden ones)
+file_list=$(ls -a1)
+
+# Separate the file names with commas
+comma_list=$(echo "$file_list" | tr '\n' ',')
+
+# Append a slash (/) to directory names
+slash_list=$(echo "$comma_list" | sed 's/[^/]*$/&\//')
+
+# Print the resulting list
+echo "$slash_list"
+
+exit 0
