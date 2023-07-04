@@ -2,9 +2,7 @@
 
 int main(void)
 {
-    int n = 50;
-
-    print_fibonacci(n);
+    print_fibonacci();
 
     return 0;
 }

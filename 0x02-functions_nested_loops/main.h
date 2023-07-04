@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-void print_fibonacci(int n);
+#include <stdio.h>
+
+void print_fibonacci(void);
 
 #endif /* MAIN_H */
