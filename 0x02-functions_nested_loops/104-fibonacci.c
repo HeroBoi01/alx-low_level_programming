@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define MAX_DIGITS 1000
+
 /**
  * main - Finds and prints the first 98 Fibonacci numbers.
  *
@@ -7,21 +9,45 @@
  */
 int main(void)
 {
-unsigned long fib1 = 1, fib2 = 2, fib_sum;
-int count;
+int i, j;
+int fib1[MAX_DIGITS] = {0}, fib2[MAX_DIGITS] = {0}, fib_sum[MAX_DIGITS] = {0};
+int carry = 0;
 
-printf("%lu, %lu", fib1, fib2);  /* Print the first two numbers */
+fib1[MAX_DIGITS - 1] = 1;
+fib2[MAX_DIGITS - 1] = 1;
 
-for (count = 2; count < 98; count++)
+printf("%d, %d", fib1[MAX_DIGITS - 1], fib2[MAX_DIGITS - 1]);
+
+for (i = 2; i < 98; i++)
 {
-fib_sum = fib1 + fib2;
-printf(", %lu", fib_sum);
-
-/* Update fib1 and fib2 */
-fib1 = fib2;
-fib2 = fib_sum;
+for (j = MAX_DIGITS - 1; j >= 0; j--)
+{
+fib_sum[j] = fib1[j] + fib2[j] + carry;
+carry = fib_sum[j] / 10;
+fib_sum[j] %= 10;
 }
 
-printf("\n");  /* Print a new line at the end */
+printf(", ");
+
+/* Print the calculated Fibonacci number */
+for (j = 0; j < MAX_DIGITS; j++)
+{
+/* Skip leading zeros until the first non-zero digit is encountered */
+if (fib_sum[j] != 0)
+{
+printf("%d", fib_sum[j]);
+break;
+}
+}
+
+/* Update fib1 and fib2 */
+for (j = 0; j < MAX_DIGITS; j++)
+{
+fib1[j] = fib2[j];
+fib2[j] = fib_sum[j];
+}
+}
+
+printf("\n"); /* Print a new line at the end */
 return (0);
 }
