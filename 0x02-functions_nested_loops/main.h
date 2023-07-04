@@ -1,9 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <unistd.h>
+#include <stdio.h>
 
-int _putchar(char c);
-void print_times_table(int n);
+void print_sum_of_multiples(void);
 
 #endif /* MAIN_H */
