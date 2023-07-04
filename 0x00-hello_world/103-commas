@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(ls -Ap | awk '{printf "%s,", $0} END {print ""}')
+printf "%s," $(ls -Ap); echo ""
