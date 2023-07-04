@@ -7,6 +7,7 @@ void print_sum_of_multiples(void);  /* Function prototype */
  *
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
     print_sum_of_multiples();
