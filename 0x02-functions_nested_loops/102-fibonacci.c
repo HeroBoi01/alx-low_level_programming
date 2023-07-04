@@ -6,21 +6,21 @@
  */
 void print_fibonacci(int n)
 {
-	int first = 1;
-	int second = 2;
-	int next;
+    int first = 1;
+    int second = 2;
+    int next;
+    int i;
 
-	printf("%d, %d", first, second);
+    printf("%d, %d", first, second);
 
-	int i;
-	for (i = 3; i <= n; i++)
-	{
-		next = first + second;
-		printf(", %d", next);
+    for (i = 3; i <= n; i++)
+    {
+        next = first + second;
+        printf(", %d", next);
 
-		first = second;
-		second = next;
-	}
+        first = second;
+        second = next;
+    }
 
-	printf("\n");
+    printf("\n");
 }
