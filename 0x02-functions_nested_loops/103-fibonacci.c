@@ -1,27 +1,25 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * sum_even_fibonacci - Calculates the sum of even-valued terms
- *                      in the Fibonacci sequence
+ * main - Calculates the sum of even-valued terms in the Fibonacci sequence
+ *        whose values do not exceed 4,000,000.
  *
- * @limit: The maximum limit for Fibonacci numbers
- *
- * Return: The sum of even-valued terms
+ * Return: 0 on success
  */
-unsigned long int sum_even_fibonacci(unsigned long int limit)
+int main(void)
 {
-    unsigned long int sum = 0;
-    unsigned long int num1 = 1, num2 = 2, fib;
+unsigned long fib1 = 1, fib2 = 2, fib_sum, sum = 0;
 
-    while (num1 <= limit)
-    {
-        if (num1 % 2 == 0)
-            sum += num1;
+while (fib1 <= 4000000)
+{
+if (fib1 % 2 == 0)
+sum += fib1;
 
-        fib = num1 + num2;
-        num1 = num2;
-        num2 = fib;
-    }
+fib_sum = fib1 + fib2;
+fib1 = fib2;
+fib2 = fib_sum;
+}
 
-    return sum;
+printf("%lu\n", sum);
+return (0);
 }
