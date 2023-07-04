@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ap1 | awk '{ORS=(NR%2==0?RS:", "); print}'
+ls -ap1 | awk '{ORS=(NR%2==0?RS:", "); print}' | cat
