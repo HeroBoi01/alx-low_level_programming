@@ -1,8 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
-
-void print_sum_of_multiples(void);
+void print_fibonacci(int n);
 
 #endif /* MAIN_H */
