@@ -1,36 +1,38 @@
 #include <stdio.h>
+#include <inttypes.h>
 
 /**
-* print_fibonacci - Prints Fibonacci numbers up to 100 terms
-*/
-void print_fibonacci(void)
+ * print_fibonacci - Prints Fibonacci numbers up to the specified count
+ * @count: The number of Fibonacci numbers to print
+ */
+void print_fibonacci(int count)
 {
-unsigned long long first = 1;  /* First Fibonacci number */
-unsigned long long second = 2; /* Second Fibonacci number */
-unsigned long long next;
-int i;
+    uint64_t first = 1;          /* First Fibonacci number */
+    uint64_t second = 2;         /* Second Fibonacci number */
+    uint64_t next;
+    int i;
 
-printf("%llu, %llu", first, second); /* Print the first two Fibonacci numbers */
+    printf("%" PRIu64 ", %" PRIu64, first, second); /* Print the first two Fibonacci numbers */
 
-for (i = 3; i <= 100; i++)
-{
-next = first + second;
-printf(", %llu", next);
-first = second;
-second = next;
-}
+    for (i = 3; i <= count; i++)
+    {
+        next = first + second;
+        printf(", %" PRIu64, next);
+        first = second;
+        second = next;
+    }
 
-printf("\n");
+    printf("\n");
 }
 
 /**
-* main - Entry point of the program
-*
-* Return: Always 0 (success)
-*/
+ * main - Entry point of the program
+ *
+ * Return: Always 0 (success)
+ */
 int main(void)
 {
-print_fibonacci();
+    print_fibonacci(100);
 
-return (0);
+    return 0;
 }
