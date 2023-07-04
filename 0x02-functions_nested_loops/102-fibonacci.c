@@ -1,24 +1,33 @@
 #include <stdio.h>
 
-void print_fibonacci(int n) {
-    int i;
-    unsigned long long int fib1 = 1;
-    unsigned long long int fib2 = 2;
-    unsigned long long int fib;
+/**
+ * print_fibonacci - Prints the first n Fibonacci numbers.
+ * @n: The number of Fibonacci numbers to print.
+ */
+void print_fibonacci(int n)
+{
+	int first = 1, second = 2, next, i;
 
-    printf("%llu, %llu", fib1, fib2);
+	printf("%d, %d", first, second); // Print the first two numbers
 
-    for (i = 3; i <= n; i++) {
-        fib = fib1 + fib2;
-        printf(", %llu", fib);
-        fib1 = fib2;
-        fib2 = fib;
-    }
+	for (i = 2; i < n; i++)
+	{
+		next = first + second;
+		printf(", %d", next);
+		first = second;
+		second = next;
+	}
 
-    printf("\n");
+	printf("\n");
 }
 
-int main() {
-    print_fibonacci(50);
-    return 0;
+/**
+ * main - Entry point of the program.
+ *
+ * Return: Always 0 (success).
+ */
+int main(void)
+{
+	print_fibonacci(50);
+	return 0;
 }
