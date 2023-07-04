@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s," $(ls -Ap); echo ""
+printf "%s," $(ls -Ap) && echo ""
