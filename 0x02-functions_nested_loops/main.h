@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-void print_fibonacci(void);
+unsigned long int sum_even_fibonacci(unsigned long int limit);
 
 #endif /* MAIN_H */
