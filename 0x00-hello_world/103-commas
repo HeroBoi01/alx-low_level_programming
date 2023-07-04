@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Get a list of all files and directories in the current directory (including hidden ones)
-file_list=$(ls -a1)
+# List all files and directories (including hidden ones) with their file types
+file_list=$(ls -Ap | awk '{if (substr($0,1,1) == ".") print $0; else print $0"/"}')
 
-# Separate the file names with commas
-comma_list=$(echo "$file_list" | tr '\n' ',')
+# Sort the list alphabetically, considering only digits and letters
+sorted_list=$(echo "$file_list" | LC_COLLATE=C sort -df)
 
-# Append a slash (/) to directory names
-slash_list=$(echo "$comma_list" | sed 's/[^/]*$/&\//')
+# Move the directories "." and ".." to the beginning of the list
+final_list=$(echo -e ".\n..\n$sorted_list" | grep -v "^$" | tr '\n' ',')
 
-# Print the resulting list
-echo "$slash_list"
+# Print the final list with commas separating the entries
+echo "${final_list%,}"
 
 exit 0
