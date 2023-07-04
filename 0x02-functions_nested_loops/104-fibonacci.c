@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <inttypes.h>
+#include <gmp.h>
 
 /**
  * print_fibonacci - Prints Fibonacci numbers up to the specified count
@@ -7,20 +7,29 @@
  */
 void print_fibonacci(int count)
 {
-    uint64_t first = 1;          /* First Fibonacci number */
-    uint64_t second = 2;         /* Second Fibonacci number */
-    uint64_t next;
+    mpz_t first;          /* First Fibonacci number */
+    mpz_t second;         /* Second Fibonacci number */
+    mpz_t next;
     int i;
 
-    printf("%" PRIu64 ", %" PRIu64, first, second); /* Print the first two Fibonacci numbers */
+    mpz_init_set_ui(first, 1);
+    mpz_init_set_ui(second, 2);
+
+    gmp_printf("%Zd, %Zd", first, second); /* Print the first two Fibonacci numbers */
+
+    mpz_init(next);
 
     for (i = 3; i <= count; i++)
     {
-        next = first + second;
-        printf(", %" PRIu64, next);
-        first = second;
-        second = next;
+        mpz_add(next, first, second);
+        gmp_printf(", %Zd", next);
+        mpz_set(first, second);
+        mpz_set(second, next);
     }
+
+    mpz_clear(first);
+    mpz_clear(second);
+    mpz_clear(next);
 
     printf("\n");
 }
