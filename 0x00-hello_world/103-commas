@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -Ap | awk 'BEGIN {ORS=","} {print $0} END {if (NR) print "\n"}'
+echo $(ls -Ap | awk '{printf "%s,", $0} END {print ""}')
