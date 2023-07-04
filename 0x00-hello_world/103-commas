@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s," $(ls -Ap) && echo ""
+ls -ap1 | awk '{ORS=(NR%2==0?RS:", "); print}'
