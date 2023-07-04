@@ -1,8 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
-
-unsigned long int sum_even_fibonacci(unsigned long int limit);
+/* Function prototypes */
 
 #endif /* MAIN_H */
