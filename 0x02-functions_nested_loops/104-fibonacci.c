@@ -5,17 +5,17 @@
 */
 void print_fibonacci(void)
 {
-int n = 98;       /* Number of Fibonacci numbers to print */
-int first = 1;    /* First Fibonacci number */
-int second = 2;   /* Second Fibonacci number */
-int i;
+unsigned long long int n = 98;       /* Number of Fibonacci numbers to print */
+unsigned long long int first = 1;    /* First Fibonacci number */
+unsigned long long int second = 2;   /* Second Fibonacci number */
+unsigned long long int i;
 
-printf("%d, %d", first, second);  /* Print the first two Fibonacci numbers */
+printf("%llu, %llu", first, second);  /* Print the first two Fibonacci numbers */
 
 for (i = 3; i <= n; i++)
 {
-int next = first + second;
-printf(", %d", next);
+unsigned long long int next = first + second;
+printf(", %llu", next);
 first = second;
 second = next;
 }
