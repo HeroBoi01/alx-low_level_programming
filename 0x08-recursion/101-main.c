@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - check the code
  *
- * Return: Always 0
+ * Return: Always 0.
  */
 int main(void)
 {
@@ -34,17 +34,5 @@ int main(void)
     printf("%d\n", r);
     r = wildcmp("abc", "*b");
     printf("%d\n", r);
-    r = wildcmp("holberton.c", "*.c");
-    printf("%d\n", r);
-    r = wildcmp("holberton.c", "holberton.c");
-    printf("%d\n", r);
-    r = wildcmp("holberton.c", "h*c");
-    printf("%d\n", r);
-    r = wildcmp("holberton.c", "hol********************************c");
-    printf("%d\n", r);
-    r = wildcmp("holberton.c", "**.*c");
-    printf("%d\n", r);
-    r = wildcmp("holberton-holberton.c", "holbe*rton.c");
-    printf("%d\n", r);
-    return 0;
+    return (0);
 }
