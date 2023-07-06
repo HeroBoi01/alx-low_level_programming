@@ -4,7 +4,7 @@
 * @n: The number to calculate the square root of
 * @i: The current value to check for square root
 *
-* Return: The sqrt root of the number or -1 if it doesn't have a natural sqrt root
+* Return: The sqrt rt of the number or -1 if it doesn't have a natural sqrt rt
 */
 int sqrt_helper(int n, int i)
 {
@@ -18,7 +18,7 @@ return (sqrt_helper(n, i + 1));  /* Recursive call to check the next value */
 * _sqrt_recursion - Calculates the natural square root of a number
 * @n: The number to calculate the square root of
 *
-* Return: The sqrt root of the number or -1 if it doesn't have a natural sqrt root
+* Return: The sqrt rt of the number or -1 if it doesn't have a natural sqrt rt
 */
 int _sqrt_recursion(int n)
 {
