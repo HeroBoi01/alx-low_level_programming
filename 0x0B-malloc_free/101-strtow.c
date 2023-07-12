@@ -14,7 +14,7 @@ for (i = 0; str[i] != '\0'; i++)
 if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 count++;
 }
-return count;
+return (count);
 }
 /**
 * strtow - Splits a string into words
@@ -27,11 +27,11 @@ char **strtow(char *str)
 char **words;
 int num_words, i, j, k, len;
 if (str == NULL || str[0] == '\0')
-return NULL;
+return (NULL);
 num_words = count_words(str);
 words = malloc((num_words + 1) * sizeof(char *));
 if (words == NULL)
-return NULL;
+return (NULL);
 j = 0;
 for (i = 0; i < num_words; i++)
 {
@@ -46,12 +46,12 @@ if (words[i] == NULL)
 for (k = 0; k < i; k++)
 free(words[k]);
 free(words);
-return NULL;
+return (NULL);
 }
 for (k = 0; k < len; k++)
 words[i][k] = str[j++];
 words[i][len] = '\0';
 }
 words[num_words] = NULL;
-return words;
+return (words);
 }
