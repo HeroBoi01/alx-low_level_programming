@@ -9,7 +9,7 @@
 char *argstostr(int ac, char **av)
 {
 char *concatenated;
-int i, j;
+int i;
 int length = 0;
 int total_length = 0;
 if (ac == 0 || av == NULL)
