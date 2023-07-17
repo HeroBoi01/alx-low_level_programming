@@ -1,12 +1,11 @@
 #ifndef DOG_H
 #define DOG_H
 
-struct dog {
+typedef struct dog
+{
     char *name;
     float age;
     char *owner;
-};
-
-void print_dog(struct dog *d);
+} dog_t; /* Defining dog_t as a new name for struct dog */
 
 #endif /* DOG_H */
