@@ -1,8 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#ifndef SIZE
-#define SIZE 1024
-#endif /* SIZE */
+#ifndef PI
+#define PI 3.14159265359
+#endif /* PI */
 
 #endif /* MAIN_H */
